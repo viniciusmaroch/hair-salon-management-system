@@ -1,7 +1,7 @@
 <div id="tabs">
 	
 	<ul>
-		<li><a href="/alberto/HSMS/p/users/add"><span>News User</span></a></li>
+		<li><a href="./users/add"><span>News User</span></a></li>
 		<li><a href="http://www.free-css.com/"><span>CSS Layouts</span></a></li>
 	</ul>
 </div>

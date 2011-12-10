@@ -272,7 +272,7 @@ form .required label:after {
 	content: '*';
 	display:inline;
 }
-form div.submit {
+form div.submit, div.cancel{
 	border: 0;
 	clear: both;
 	margin-top: 10px;
@@ -403,6 +403,7 @@ div.actions ul li a:hover {
 }
 
 input[type=submit],
+input[type=button],
 div.actions ul li a,
 td.actions a {
 	font-weight:normal;
@@ -420,6 +421,7 @@ td.actions a {
 	min-width: 0;
 }
 input[type=submit]:hover,
+input[type=button]:hover,
 div.actions ul li a:hover,
 td.actions a:hover {
 	background: #f0f09a;
@@ -608,3 +610,28 @@ hrx {
 #tabs a:hover span {
 	background-position:100% -42px;
 	}
+ #calendar{
+                height:auto;
+                width: 900px;
+                margin: 0 auto;
+ }
+ 
+ input[type=button] {
+	display: inline;
+	font-size: 110%;
+	width: auto;
+}
+.cancel input[type=button] {
+	background:#62af56;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a8ea9c), to(#62af56));
+	background-image: -moz-linear-gradient(top, #a8ea9c, #62af56);
+	border-color: #2d6324;
+	color: #000;
+	text-shadow: #8cee7c 0px 1px 0px;
+}
+.cancel input[type=button]:hover {
+	background:#4ca83d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#85e573), to(#4ca83d));
+	background-image: -moz-linear-gradient(top, #85e573, #4ca83d);
+}
+   

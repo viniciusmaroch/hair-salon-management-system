@@ -79,7 +79,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => 'root',
-		'database' => 'name of database here',
+		'database' => 'hsms_db',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

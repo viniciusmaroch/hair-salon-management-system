@@ -32,20 +32,18 @@ class AppointmentsController extends AppController  {
 	        if ($allday=='true') {
 	            $appointment['Appointment']['allday'] = 1;
 	            $displayTime = 'All day appointment: ('
-	                . date('D',strtotime($day.'/'.$month.'/'.$year)).' '.
-	                $day.' / '. date("M", mktime(0, 0, 0, $month, 10)).')';
+	                . date('D',strtotime($day.'/'.$month.'/'.$year)).' '.$day.' / '. date("M", mktime(0, 0, 0, $month, 10)).')';
 	        } else {
 	            $appointment['Appointment']['allday'] = 0;
-	            $displayTime = date('D',strtotime($day.'/'.$month.'/'.$year)).' '
-	                .$day.' / '.date("M", mktime(0, 0, 0, $month, 10)).
+	            $displayTime = date('D',strtotime($day.'/'.$month.'/'.$year)).' '.$day.' / '.date("M", mktime(0, 0, 0, $month, 10)).
 	                ', '.$hour.' : '.$min.' &mdash; '.$hourPlus.' : '.$min;
 	        }
 	       // $this->set("displayTime",$displayTime);
 	 
 	        //Populate the event fields for the add form
-	        $appointment['Appointment']['title'] = 'Appointment description';
+	        $appointment['Appointment']['title'] = 'Appointment title';
 	        $appointment['Appointment']['start'] = $year.'-'.$month.'-'.$day.' '.$hour.':'.$min.':00';
-	        $appointment['Appointment']['end'] = $year.'-'.$month.'-'.$day.' '.$hourPlus.':'.$min.':00';
+	        $appointment['Appointment']['end'] = $year.'-'.$month.'-'.$day.' '.$hour.':'.$min.':00';
 	        $this->set('appointment',$appointment);
 	        
 	        $services = $this->Appointment->Service->find('list');
@@ -56,14 +54,32 @@ class AppointmentsController extends AppController  {
 	        
 	    } else {
 	        //Create and save the new event in the table.
-	        //Event type is set to editable - because this is a user event.
+	        
 	        $this->Appointment->create();
 	        
 	        $specificService = $this->Appointment->Service->find('first', array('conditions' => array('Service.id' => $this->data['Appointment']['service_id'])));
 	       	       
 	        $this->data['Appointment']['editable']='1';
-	        $this->data['Appointment']['title']=$specificService['Service']['name'];
-	        $this->Appointment->save($this->data);
+	        $this->data['Appointment']['title'] = $specificService['Service']['name'];
+	        
+	    	$dateInString = $this->data['Appointment']['start']['month'].'/'.
+	    			$this->data['Appointment']['start']['day'].'/'.
+	    			$this->data['Appointment']['start']['year'].' '.
+	    			$this->data['Appointment']['start']['hour'].':'.
+	    			$this->data['Appointment']['start']['min'].' '.
+	    			$this->data['Appointment']['start']['meridian'];
+	    			
+	    	$startTime = strtotime($dateInString);	  		    	
+	    	    	
+	    	$hr =  date("i",strtotime($specificService['Service']['hour']));	
+	    	$min = date("i",strtotime($specificService['Service']['duration']));
+	    	
+	    	   	
+	    	$endTime = $startTime +($min * 60) + ( $hr * 60 * 60 );    	
+	    	
+	    	$this->data['Appointment']['end'] = date("Y/m/d H:i",$endTime);
+	        $this->Appointment->save($this->data);	        
+	        
 	        $this->Session->setFlash(__('The appointment has been saved', true));	
 	        $this->redirect(array('controller' => "appointments", 'action' => "index"));
 	    }

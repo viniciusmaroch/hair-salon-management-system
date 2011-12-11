@@ -10,8 +10,8 @@
 ?>
  	<div class="cancel">&nbsp;&nbsp;<input type="button" value="Close" onclick="back();"></div>
 
-	<script type="text/javascript">
-	    function back() {
-	        window.location.href ="./appointments";
-	    }
-	</script>
+<script type="text/javascript">
+    function back() {
+        window.location.href ="./appointments";
+    }
+</script>

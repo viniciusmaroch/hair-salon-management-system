@@ -10,7 +10,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('user_name');?></th>			
+			<th><?php echo $this->Paginator->sort('name');?></th>			
 			<th><?php echo $this->Paginator->sort('last_login');?></th>
 			<th><?php echo $this->Paginator->sort('is_employee');?></th>
 			<th><?php echo $this->Paginator->sort('is_manager');?></th>
@@ -26,7 +26,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['user_name']; ?>&nbsp;</td>		
+		<td><?php echo $user['User']['name']; ?>&nbsp;</td>		
 		<td><?php echo $user['User']['last_login']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_employee']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_manager']; ?>&nbsp;</td>

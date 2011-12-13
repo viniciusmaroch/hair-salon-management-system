@@ -2,7 +2,8 @@
 
 <?php
     echo $form->create('Appointment', array('target'=> '_parent'));    
-    echo $form->input('service_id');    
+    echo $form->input('service_id');
+    echo $form->input('user_id');        
     echo $form->input('start', array('value'=>$appointment['Appointment']['start']));
     echo $form->input('end', array('type'=>'hidden','value'=>$appointment['Appointment']['end']));   
    

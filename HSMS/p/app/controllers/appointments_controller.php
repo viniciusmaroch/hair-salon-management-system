@@ -6,6 +6,13 @@ class AppointmentsController extends AppController  {
     function index(){
     	
     }
+    
+	function viewAll() {
+		$this->Appointment->recursive = 0;
+		$this->set('appointments', $this->paginate());
+	}
+    
+    
 	function add() {
 		if (!empty($this->data)) {
 			$this->Appointment->create();
@@ -16,6 +23,9 @@ class AppointmentsController extends AppController  {
 				$this->Session->setFlash(__('The appointment could not be saved. Please, try again.', true));
 			}
 		}
+		 	$services = $this->Appointment->Service->find('list');
+			$users = $this->Appointment->User->find('list');
+			$this->set(compact('services', 'users'));
 	}
 	
 	function addAppointment($allday=null,$day=null,$month=null,$year=null,$hour=null,$min=null) {
@@ -46,8 +56,9 @@ class AppointmentsController extends AppController  {
 	        $appointment['Appointment']['end'] = $year.'-'.$month.'-'.$day.' '.$hour.':'.$min.':00';
 	        $this->set('appointment',$appointment);
 	        
-	        $services = $this->Appointment->Service->find('list');
-			$this->set(compact('services'));
+	     	$services = $this->Appointment->Service->find('list');
+			$users = $this->Appointment->User->find('list');
+			$this->set(compact('services', 'users'));
 	 
 	        //Do not use a view template.
 	        //$this->layout="empty";
@@ -56,6 +67,7 @@ class AppointmentsController extends AppController  {
 	        //Create and save the new event in the table.
 	        
 	        $this->Appointment->create();
+	        
 	        
 	        $specificService = $this->Appointment->Service->find('first', array('conditions' => array('Service.id' => $this->data['Appointment']['service_id'])));
 	       	       

@@ -13,11 +13,6 @@ class Service extends AppModel {
 			),
 		),
 	);
-	
-	function parentNode() {
-		return null;
-	}
-
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $hasMany = array(
@@ -33,6 +28,7 @@ class Service extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-			)
-			);
+		)
+	);
+
 }

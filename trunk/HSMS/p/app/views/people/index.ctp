@@ -1,3 +1,4 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="people index">
 	<h2><?php __('People');?></h2>
 	<table cellpadding="0" cellspacing="0">

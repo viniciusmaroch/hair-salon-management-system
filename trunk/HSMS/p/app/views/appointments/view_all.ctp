@@ -1,4 +1,9 @@
+
+<?php     echo $html->css('cake.generic.css',false);?>
+
 <div class="appointments index">
+
+
 	<h2><?php __('Appointments');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>

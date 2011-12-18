@@ -1,3 +1,4 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="services view">
 <h2><?php  __('Service');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>

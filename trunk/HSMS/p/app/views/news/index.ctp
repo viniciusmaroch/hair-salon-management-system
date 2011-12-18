@@ -1,4 +1,6 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="news index">
+
 	<h2><?php __('News');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>

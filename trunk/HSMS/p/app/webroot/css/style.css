@@ -1,0 +1,266 @@
+/* 
+    Document   : style
+    Created on : Apr 17, 2010, 5:06:04 PM
+    Author     : 474172
+    Description:
+        Purpose of the stylesheet follows
+
+    CSS structure take from Free CSS Templates
+    http://www.freecsstemplates.org
+    Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+
+
+
+body {
+    margin: 0px;
+    
+    font-family: Arial;
+    font-size: 13px;
+    color: #444444;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family:Arial;
+    font-weight: bold;
+    color: #444444;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p, ul, ol {
+    margin-top: 0;
+    line-height: 180%;
+}
+
+
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted #9B0F0F;
+    color: #9B0F0F;
+}
+a:hover {
+    background: none;
+}
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+    background: url(images/img04.jpg) no-repeat left top;
+}
+
+#header {
+    width: 900px;
+    height: 105px;
+    margin: 0 auto;
+    background: url(images/logo.png) repeat-y left top;
+    border: 1px black;
+}
+
+#menu {
+    width: 900px;
+    height: 44px;
+    background: url(images/img03.jpg) no-repeat left top;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 13px 0 0 20px;
+    list-style: none;
+    line-height: normal;
+}
+
+#menu li {
+    float: left;
+
+}
+
+#menu a {
+    display: block;
+    margin-right: 3px;
+    padding: 5px 20px 7px 20px;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: none;
+}
+
+#menu a:hover {
+    background: #9B0F0F;
+    text-decoration: none;
+}
+
+#menu .first {
+    margin-right: 3px;
+    background: #9B0F0F;
+}
+#page {
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-bottom: 1px gray;
+}
+
+
+
+#content {
+    float: right;
+    width: 550px;
+    padding: 20px 20px 0 0;
+}
+
+#middlecontent {
+
+    width: 800px;
+    padding: 20px 20px  20px 20px;
+}
+
+.post {
+    margin-left: 20px;
+    padding-bottom: 30px;
+}
+
+.post .title {
+    padding-left: 10px;
+
+    color: #000000;
+}
+
+.post .title a {
+    background: none;
+    color: #444444;
+    border: none;
+}
+
+.post .title a:hover {
+    text-decoration: underline;
+}
+
+.post .meta {
+    background: #E0E0E0;
+    padding: 3px 10px 3px 10px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+
+.post .entry {
+    padding: 10px 20px 20px 20px;
+    text-align: justify;
+}
+
+
+#sidebar {
+    float: left;
+    width: 250px;
+    padding: 25px 10px 0 20px;
+}
+
+#sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar li {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar li ul {
+    padding-bottom: 30px;
+}
+
+#sidebar li li {
+    line-height: 35px;
+    border-bottom: 1px dashed #BCBCBC;
+}
+
+#sidebar li li span {
+    display: block;
+    margin-top: -20px;
+    padding: 0;
+    font-size: 11px;
+    font-style: italic;
+    color: #BCBCBC;
+}
+
+#sidebar h2 {
+    letter-spacing: -.5px;
+    color: #444444;
+}
+
+#sidebar p {
+    padding-bottom: 20px;
+    text-align: justify;
+}
+
+#sidebar a {
+    color: #000000;
+    border: none;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+    color: #787878;
+}
+
+a {
+    outline:none;
+}
+
+.entry {
+    width: auto;
+    background: #ffffff;
+    padding:8px;
+    border:1px solid #bbbbbb;
+    margin:5px auto;
+    -moz-border-radius:8px;
+}
+
+span.link a {
+    font-size:150%;
+    color: #000000;
+    text-decoration:none;
+}
+
+a.vote_up, a.vote_down {
+    display:inline-block;
+    background-repeat:none;
+    background-position:center;
+    height:16px;
+    width:16px;
+    margin-left:4px;
+    text-indent:-900%;
+}
+
+a.vote_up {
+    background:url("images/thumb_up.png");
+}
+
+a.vote_down {
+    background:url("images/thumb_down.png");
+}
+
+.notification{
+    color: green;
+}
+.message{
+    color: red;
+}

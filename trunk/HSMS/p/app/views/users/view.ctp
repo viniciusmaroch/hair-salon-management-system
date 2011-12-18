@@ -1,3 +1,4 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="users view">
 <h2><?php  __('User');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>

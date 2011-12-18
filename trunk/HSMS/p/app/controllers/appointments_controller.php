@@ -3,8 +3,9 @@ class AppointmentsController extends AppController  {
     var $name = 'Appointments';
     var $helpers = array('Time','Javascript');
     
+
     function index(){
-    	
+		$this->set('title_for_layout','View Active Users');    	
     }
     
 	function viewAll() {
@@ -60,6 +61,7 @@ class AppointmentsController extends AppController  {
 			$users = $this->Appointment->User->find('list');
 			$this->set(compact('services', 'users'));
 	 
+			 $this->layout = 'empty';
 	        //Do not use a view template.
 	        //$this->layout="empty";
 	        

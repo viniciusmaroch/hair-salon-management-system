@@ -1,3 +1,4 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="services index">
 	<h2><?php __('Services');?></h2>
 	<table cellpadding="0" cellspacing="0">

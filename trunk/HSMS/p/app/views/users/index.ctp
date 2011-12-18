@@ -26,7 +26,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['name']; ?>&nbsp;</td>		
+		<td><?php echo $user['User']['user_name']; ?>&nbsp;</td>		
 		<td><?php echo $user['User']['last_login']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_employee']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_manager']; ?>&nbsp;</td>

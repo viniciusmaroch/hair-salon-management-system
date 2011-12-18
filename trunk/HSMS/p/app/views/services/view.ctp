@@ -3,7 +3,7 @@
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $service['Service']['id']; ?>
+			<?php echo $service['Service']['SEID']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
@@ -31,8 +31,8 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Service', true), array('action' => 'edit', $service['Service']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Service', true), array('action' => 'delete', $service['Service']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $service['Service']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Service', true), array('action' => 'edit', $service['Service']['SEID'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Delete Service', true), array('action' => 'delete', $service['Service']['SEID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $service['Service']['SEID'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Services', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Service', true), array('action' => 'add')); ?> </li>
 	</ul>

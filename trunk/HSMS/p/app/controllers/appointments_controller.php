@@ -23,7 +23,7 @@ class AppointmentsController extends AppController  {
 				$this->Session->setFlash(__('The appointment could not be saved. Please, try again.', true));
 			}
 		}
-		 	$services = $this->Appointment->Service->find('list');
+		 	$services = $this->Appointment->Service->find('list');		 	
 			$users = $this->Appointment->User->find('list');
 			$this->set(compact('services', 'users'));
 	}
@@ -69,7 +69,7 @@ class AppointmentsController extends AppController  {
 	        $this->Appointment->create();
 	        
 	        
-	        $specificService = $this->Appointment->Service->find('first', array('conditions' => array('Service.id' => $this->data['Appointment']['service_id'])));
+	        $specificService = $this->Appointment->Service->find('first', array('conditions' => array('Service.SEID' => $this->data['Appointment']['service_id'])));
 	       	       
 	        $this->data['Appointment']['editable']='1';
 	        $this->data['Appointment']['title'] = $specificService['Service']['name'];
@@ -90,7 +90,9 @@ class AppointmentsController extends AppController  {
 	    	$endTime = $startTime +($min * 60) + ( $hr * 60 * 60 );    	
 	    	
 	    	$this->data['Appointment']['end'] = date("Y/m/d H:i",$endTime);
-	        $this->Appointment->save($this->data);	        
+	        
+	    
+	    	$this->Appointment->save($this->data);	        
 	        
 	        $this->Session->setFlash(__('The appointment has been saved', true));	
 	        $this->redirect(array('controller' => "appointments", 'action' => "index"));
@@ -115,7 +117,7 @@ class AppointmentsController extends AppController  {
 			$all = ($appointments[$a]['Appointment']['allday'] == 1);
 			
 			//Create an event entry
-			$rows[] = array('id' => $appointments[$a]['Appointment']['id'],
+			$rows[] = array('id' => $appointments[$a]['Appointment']['AID'],
 				'title' => $appointments[$a]['Appointment']['title'],
 				'start' => date('Y-m-d H:i', strtotime($appointments[$a]['Appointment']['start'])),
 				'end' => date('Y-m-d H:i',strtotime($appointments[$a]['Appointment']['end'])),

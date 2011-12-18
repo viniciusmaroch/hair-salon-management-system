@@ -28,11 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `news` (
   `NID` int(15) NOT NULL AUTO_INCREMENT,
-  `UID` int(15) NOT NULL,
+  `user_id` int(15) NOT NULL,
   `postedOn` datetime NOT NULL,
   `description` text NOT NULL,
-  PRIMARY KEY (`NID`),
-  KEY `UID` (`UID`)
+  PRIMARY KEY (`NID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --

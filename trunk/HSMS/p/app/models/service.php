@@ -1,6 +1,7 @@
 <?php
 class Service extends AppModel {
 	var $name = 'Service';
+	var $primaryKey = 'SEID';
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(

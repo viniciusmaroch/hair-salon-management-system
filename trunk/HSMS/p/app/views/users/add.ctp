@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php __('Add User'); ?></legend>
 	<?php
-		echo $this->Form->input('user_name');
+		echo $this->Form->input('name');
 		echo $this->Form->password('password');		
 		echo $this->Form->input('is_employee');
 		echo $this->Form->input('is_manager');

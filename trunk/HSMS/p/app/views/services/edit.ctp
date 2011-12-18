@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php __('Edit Service'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
+		echo $this->Form->input('SEID');
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
 		echo $this->Form->input('duration', array('type' => 'time', 'interval' => 5,'timeFormat'=>'24')); 

@@ -2,7 +2,7 @@
 	<h2><?php __('Services');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('SEID');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th><?php echo $this->Paginator->sort('description');?></th>
 			<th><?php echo $this->Paginator->sort('duration');?></th>
@@ -18,15 +18,15 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $service['Service']['id']; ?>&nbsp;</td>
+		<td><?php echo $service['Service']['SEID']; ?>&nbsp;</td>
 		<td><?php echo $service['Service']['name']; ?>&nbsp;</td>
 		<td><?php echo $service['Service']['description']; ?>&nbsp;</td>
 		<td><?php echo $service['Service']['duration']; ?>&nbsp;</td>
 		<td><?php echo $service['Service']['cost']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $service['Service']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $service['Service']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $service['Service']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $service['Service']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $service['Service']['SEID'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $service['Service']['SEID'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $service['Service']['SEID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $service['Service']['SEID'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

@@ -26,6 +26,8 @@ class NewsController extends AppController {
 				$this->Session->setFlash(__('The news could not be saved. Please, try again.', true));
 			}
 		}
+		$users = $this->News->User->find('list');
+		$this->set(compact('users'));
 	}
 
 	function edit($id = null) {

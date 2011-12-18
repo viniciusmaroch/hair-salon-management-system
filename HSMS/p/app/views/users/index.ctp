@@ -1,10 +1,5 @@
-<div id="tabs">
-	
-	<ul>
-		<li><a href="./users/add"><span>News User</span></a></li>
-		<li><a href="http://www.free-css.com/"><span>CSS Layouts</span></a></li>
-	</ul>
-</div>
+<?php     echo $html->css('cake.generic.css');?>
+
 <div class="users index">
 	<h2><?php __('Users');?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -51,4 +46,13 @@
  |
 		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
+</div>
+<div class="actions">
+	<h3><?php __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('Edit User', true), array('action' => 'edit', $user['User']['UID'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Delete User', true), array('action' => 'delete', $user['User']['UID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['UID'])); ?> </li>
+		<li><?php echo $this->Html->link(__('List Users', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New User', true), array('action' => 'add')); ?> </li>
+	</ul>
 </div>

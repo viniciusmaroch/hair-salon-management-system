@@ -1,3 +1,4 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="services form">
 <?php echo $this->Form->create('Service');?>
 	<fieldset>

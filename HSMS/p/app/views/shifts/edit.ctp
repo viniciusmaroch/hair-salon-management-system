@@ -1,4 +1,5 @@
 <div class="shifts form">
+<?php     echo $html->css('cake.generic.css');?>
 <?php echo $this->Form->create('Shift');?>
 	<fieldset>
 		<legend><?php __('Edit Shift'); ?></legend>

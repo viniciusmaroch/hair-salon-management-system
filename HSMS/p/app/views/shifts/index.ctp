@@ -1,4 +1,5 @@
 <div class="shifts index">
+<?php     echo $html->css('cake.generic.css');?>
 	<h2><?php __('Shifts');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>

@@ -1,10 +1,8 @@
 <?php
-    echo $javascript->link('jquery-1.5.2.min.js');
-	//echo $javascript->link('ui.core.js');
-  	//echo $javascript->link('ui.resizable.js');
-    echo $javascript->link('fullcalendar.min.js');
-    //echo $javascript->link('ui.draggable.js');
-    echo $html->css('fullcalendar');
+    echo $javascript->link('jquery-1.5.2.min.js');    
+    echo $javascript->link('fullcalendar.min.js');   
+    echo $html->css('fullcalendar');   
+    echo $html->css('cake.generic.css',false);
 ?>
         
 <script type='text/javascript'>
@@ -31,7 +29,7 @@
     });
 
 </script>
-
+<?php echo $this->Session->flash();?>
 
 <div id="lightbox-panel"></div>
 <div id="lightbox"></div>

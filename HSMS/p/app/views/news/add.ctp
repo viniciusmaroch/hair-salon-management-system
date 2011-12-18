@@ -1,4 +1,5 @@
 <div class="news form">
+<?php     echo $html->css('cake.generic.css');?>
 <?php echo $this->Form->create('News');?>
 	<fieldset>
 		<legend><?php __('Add News'); ?></legend>

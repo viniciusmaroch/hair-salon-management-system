@@ -1,5 +1,5 @@
 <!-- app/views/appointments/addCalendar.ctp -->
-
+<?php     echo $html->css('cake.generic.css');?>
 <?php
     echo $form->create('Appointment', array('target'=> '_parent'));    
     echo $form->input('service_id');

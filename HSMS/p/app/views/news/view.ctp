@@ -1,4 +1,6 @@
+<?php     echo $html->css('cake.generic.css');?>
 <div class="news view">
+
 <h2><?php  __('News');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('NID'); ?></dt>

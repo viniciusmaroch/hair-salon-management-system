@@ -1,4 +1,5 @@
 <div class="shifts view">
+<?php     echo $html->css('cake.generic.css');?>
 <h2><?php  __('Shift');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('SHID'); ?></dt>

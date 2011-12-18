@@ -1,6 +1,7 @@
 <?php
 class Appointment extends AppModel {
 	var $name = 'Appointment';
+	var $primaryKey = 'AID';
 	var $validate = array(
 		'title' => array(
 			'notempty' => array(
@@ -32,7 +33,7 @@ class Appointment extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'service_id' => array(
+		'SEID' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -42,7 +43,7 @@ class Appointment extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'user_id' => array(
+		'UID' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',

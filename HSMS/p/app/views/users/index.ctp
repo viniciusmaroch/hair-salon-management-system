@@ -9,7 +9,7 @@
 	<h2><?php __('Users');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('UID');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>			
 			<th><?php echo $this->Paginator->sort('last_login');?></th>
 			<th><?php echo $this->Paginator->sort('is_employee');?></th>
@@ -25,15 +25,15 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $user['User']['id']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['user_name']; ?>&nbsp;</td>		
+		<td><?php echo $user['User']['UID']; ?>&nbsp;</td>
+		<td><?php echo $user['User']['name']; ?>&nbsp;</td>		
 		<td><?php echo $user['User']['last_login']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_employee']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_manager']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $user['User']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $user['User']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $user['User']['UID'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $user['User']['UID'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $user['User']['UID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['UID'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

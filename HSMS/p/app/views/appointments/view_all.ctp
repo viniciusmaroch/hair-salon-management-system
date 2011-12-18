@@ -2,7 +2,7 @@
 	<h2><?php __('Appointments');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('AID');?></th>
 			<th><?php echo $this->Paginator->sort('title');?></th>
 			<th><?php echo $this->Paginator->sort('allday');?></th>
 			<th><?php echo $this->Paginator->sort('start');?></th>
@@ -21,22 +21,22 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $appointment['Appointment']['id']; ?>&nbsp;</td>
+		<td><?php echo $appointment['Appointment']['AID']; ?>&nbsp;</td>
 		<td><?php echo $appointment['Appointment']['title']; ?>&nbsp;</td>
 		<td><?php echo $appointment['Appointment']['allday']; ?>&nbsp;</td>
 		<td><?php echo $appointment['Appointment']['start']; ?>&nbsp;</td>
 		<td><?php echo $appointment['Appointment']['end']; ?>&nbsp;</td>
 		<td><?php echo $appointment['Appointment']['editable']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($appointment['Service']['name'], array('controller' => 'services', 'action' => 'view', $appointment['Service']['id'])); ?>
+			<?php echo $this->Html->link($appointment['Service']['name'], array('controller' => 'services', 'action' => 'view', $appointment['Service']['SEID'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($appointment['User']['id'], array('controller' => 'users', 'action' => 'view', $appointment['User']['id'])); ?>
+			<?php echo $this->Html->link($appointment['User']['UID'], array('controller' => 'users', 'action' => 'view', $appointment['User']['UID'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $appointment['Appointment']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $appointment['Appointment']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $appointment['Appointment']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $appointment['Appointment']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $appointment['Appointment']['AID'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $appointment['Appointment']['AID'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $appointment['Appointment']['AID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $appointment['Appointment']['AID'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

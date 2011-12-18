@@ -3,7 +3,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('SHID');?></th>
-			<th><?php echo $this->Paginator->sort('UID');?></th>
+			<th><?php echo $this->Paginator->sort('user_id');?></th>
 			<th><?php echo $this->Paginator->sort('from');?></th>
 			<th><?php echo $this->Paginator->sort('to');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -18,7 +18,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $shift['Shift']['SHID']; ?>&nbsp;</td>
-		<td><?php echo $shift['Shift']['UID']; ?>&nbsp;</td>
+		<td><?php echo $this->Html->link($shift['User']['name'], array('controller' => 'users', 'action' => 'view', $shift['User']['UID'])); ?>&nbsp;</td>
 		<td><?php echo $shift['Shift']['from']; ?>&nbsp;</td>
 		<td><?php echo $shift['Shift']['to']; ?>&nbsp;</td>
 		<td class="actions">

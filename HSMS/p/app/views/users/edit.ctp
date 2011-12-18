@@ -3,8 +3,8 @@
 	<fieldset>
 		<legend><?php __('Edit User'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('user_name');		
+		echo $this->Form->input('UID');
+		echo $this->Form->input('name');		
 		echo $this->Form->input('last_login');
 		echo $this->Form->input('is_employee');
 		echo $this->Form->input('is_manager');

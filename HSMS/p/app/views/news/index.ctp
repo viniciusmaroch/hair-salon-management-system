@@ -3,7 +3,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('NID');?></th>
-			<th><?php echo $this->Paginator->sort('UID');?></th>
+			<th><?php echo $this->Paginator->sort('user_id');?></th>
 			<th><?php echo $this->Paginator->sort('postedOn');?></th>
 			<th><?php echo $this->Paginator->sort('description');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -18,7 +18,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $news['News']['NID']; ?>&nbsp;</td>
-		<td><?php echo $news['News']['UID']; ?>&nbsp;</td>
+		<td><?php echo $this->Html->link($news['User']['name'], array('controller' => 'users', 'action' => 'view', $news['User']['UID'])); ?>&nbsp;</td>
 		<td><?php echo $news['News']['postedOn']; ?>&nbsp;</td>
 		<td><?php echo $news['News']['description']; ?>&nbsp;</td>
 		<td class="actions">
@@ -26,6 +26,7 @@
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $news['News']['NID'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $news['News']['NID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $news['News']['NID'])); ?>
 		</td>
+		
 	</tr>
 <?php endforeach; ?>
 	</table>

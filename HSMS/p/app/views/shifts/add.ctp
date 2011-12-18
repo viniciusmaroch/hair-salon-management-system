@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php __('Add Shift'); ?></legend>
 	<?php
-		echo $this->Form->input('UID');
+		echo $this->Form->input('user_id');
 		echo $this->Form->input('from');
 		echo $this->Form->input('to');
 	?>

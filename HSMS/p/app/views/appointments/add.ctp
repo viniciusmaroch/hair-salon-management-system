@@ -8,8 +8,8 @@
 		echo $this->Form->input('start');
 		echo $this->Form->input('end');
 		echo $this->Form->input('editable');
-		echo $this->Form->input('service_id');
-		echo $this->Form->input('user_id');
+		echo $this->Form->input('SEID');
+		echo $this->Form->input('UID');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

@@ -26,6 +26,9 @@ class ShiftsController extends AppController {
 				$this->Session->setFlash(__('The shift could not be saved. Please, try again.', true));
 			}
 		}
+		
+		$users = $this->Shift->User->find('list');
+		$this->set(compact('users'));
 	}
 
 	function edit($id = null) {

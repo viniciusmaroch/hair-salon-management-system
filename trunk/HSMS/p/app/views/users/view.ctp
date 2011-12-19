@@ -207,9 +207,9 @@
 			<td><?php echo $shifts['from'];?></td>
 			<td><?php echo $shifts['to'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'shifts', 'action' => 'view', $shifts['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'shifts', 'action' => 'edit', $shifts['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'shifts', 'action' => 'delete', $shifts['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $shifts['id'])); ?>
+				<?php echo $this->Html->link(__('View', true), array('controller' => 'shifts', 'action' => 'view', $shifts['SHID'])); ?>
+				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'shifts', 'action' => 'edit', $shifts['SHID'])); ?>
+				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'shifts', 'action' => 'delete', $shifts['SHID']), null, sprintf(__('Are you sure you want to delete # %s?', true), $shifts['SHID'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>

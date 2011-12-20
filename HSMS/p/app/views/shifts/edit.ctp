@@ -5,7 +5,7 @@
 		<legend><?php __('Edit Shift'); ?></legend>
 	<?php
 		echo $this->Form->input('SHID');
-		echo $this->Form->input('UID');
+		echo $this->Form->input('user_id');
 		echo $this->Form->input('from');
 		echo $this->Form->input('to');
 	?>

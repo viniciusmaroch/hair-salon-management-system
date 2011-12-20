@@ -48,6 +48,9 @@ class ShiftsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Shift->read(null, $id);
 		}
+		$users = $this->Shift->User->find('list', array('conditions' => array('User.is_employee' => 1 )));
+		
+		$this->set(compact('users'));
 	}
 
 	function delete($id = null) {

@@ -7,6 +7,8 @@ class NewsController extends AppController {
 		$this->News->recursive = 0;
 		$this->set('news', $this->paginate());
 	}
+	
+
 
 	function view($id = null) {
 		if (!$id) {
@@ -18,7 +20,14 @@ class NewsController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
-			$this->News->create();
+		  $this->News->create();
+		  
+		  $today = getdate();
+			$this->data['News']['postedOn']['month'] =  $today['mon'];
+			$this->data['News']['postedOn']['day'] = $today['mday'];
+			$this->data['News']['postedOn']['year'] = $today['year'];
+			$this->data['News']['postedOn']['hour'] = $today['hours'];
+			$this->data['News']['postedOn']['min'] = $today['minutes'];			
 			if ($this->News->save($this->data)) {
 				$this->Session->setFlash(__('The news has been saved', true));
 				$this->redirect(array('action' => 'index'));
@@ -26,7 +35,8 @@ class NewsController extends AppController {
 				$this->Session->setFlash(__('The news could not be saved. Please, try again.', true));
 			}
 		}
-		$users = $this->News->User->find('list');
+		
+		$users = $this->News->User->find('list', array('conditions' => array('User.is_manager' => 1 )));
 		$this->set(compact('users'));
 	}
 

@@ -21,10 +21,9 @@ show up on all of your views, include it here -->
     <div id="menu">
     	<ul>
     	<li><?php echo $this->Html->link('Home', array('controller' => 'home', 'action' => 'index')); ?></li>        
-        <li><?php echo $this->Html->link('Services', array('controller' => 'services', 'action' => 'index')); ?></li>
-        <li><?php echo $this->Html->link('Appointments', array('controller' => 'appointments', 'action' => 'index')); ?></li>
-        <li><?php echo $this->Html->link('Users', array('controller' => 'users', 'action' => 'index')); ?></li>
-        <li><?php echo $this->Html->link('News', array('controller' => 'news', 'action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link('Services', array('controller' => 'services', 'action' => 'viewPublic')); ?></li>        
+        
+        <li><?php echo $this->Html->link('Admin', array('controller' => 'users', 'action' => 'index')); ?></li>
         </ul>
     </div>    
     

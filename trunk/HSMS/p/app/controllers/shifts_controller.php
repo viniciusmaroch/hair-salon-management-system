@@ -27,7 +27,8 @@ class ShiftsController extends AppController {
 			}
 		}
 		
-		$users = $this->Shift->User->find('list');
+		$users = $this->Shift->User->find('list', array('conditions' => array('User.is_employee' => 1 )));
+		
 		$this->set(compact('users'));
 	}
 

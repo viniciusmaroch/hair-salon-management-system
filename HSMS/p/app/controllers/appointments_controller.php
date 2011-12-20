@@ -91,8 +91,15 @@ class AppointmentsController extends AppController  {
 	    	$min = date("i",strtotime($specificService['Service']['duration']));
 	    	
 	    	   	
+	    	
+	    	if($hr == 12){
+	    		$hr = 0;	    		
+	    	}
+	    	
 	    	$endTime = $startTime +($min * 60) + ( $hr * 60 * 60 );    	
 	    	
+	    	//print_r(date("Y/m/d H:i",$endTime));
+	    	//die();
 	    	$this->data['Appointment']['end'] = date("Y/m/d H:i",$endTime);
 	        
 	    

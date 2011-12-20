@@ -58,7 +58,9 @@ class AppointmentsController extends AppController  {
 	        $this->set('appointment',$appointment);
 	        
 	     	$services = $this->Appointment->Service->find('list');
-			$users = $this->Appointment->User->find('list');
+	//		$users = $this->Appointment->User->find('list');
+	
+			$users = $this->Appointment->User->find('list', array('conditions' => array('User.is_customer' => 1)));
 			$this->set(compact('services', 'users'));
 	 
 			 $this->layout = 'empty';
@@ -85,7 +87,7 @@ class AppointmentsController extends AppController  {
 	    			
 	    	$startTime = strtotime($dateInString);	  		    	
 	    	    	
-	    	$hr =  date("i",strtotime($specificService['Service']['hour']));	
+	    	$hr =  date("h",strtotime($specificService['Service']['duration']));	
 	    	$min = date("i",strtotime($specificService['Service']['duration']));
 	    	
 	    	   	
@@ -135,6 +137,18 @@ class AppointmentsController extends AppController  {
 		$this->header('Content-Type: application/json');
 		echo json_encode($rows);
     }
+	function delete($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for appointment', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		if ($this->Appointment->delete($id)) {
+			$this->Session->setFlash(__('Appointment deleted', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->Session->setFlash(__('Appointment was not deleted', true));
+		$this->redirect(array('action' => 'index'));
+	}
     
 }
 ?>

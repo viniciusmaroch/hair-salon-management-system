@@ -29,9 +29,26 @@
     });
 
 </script>
-<?php echo $this->Session->flash();?>
 
+<?php echo $this->Session->flash();?>
+<div class="news view">
+<div id="calendar"></div>
+
+</div>
+
+<div class="actions">
+	<h3><?php __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('New User', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Appointments', true), array('controller' => 'appointments', 'action' => 'viewAll')); ?> </li>
+		<li><?php echo $this->Html->link(__('View Calendar', true), array('controller' => 'appointments', 'action' => 'index')); ?> </li>		
+		<li><?php echo $this->Html->link(__('List News', true), array('controller' => 'news', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New News', true), array('controller' => 'news', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Shifts', true), array('controller' => 'shifts', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Shifts', true), array('controller' => 'shifts', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
 <div id="lightbox-panel"></div>
 <div id="lightbox"></div>
-<div id="calendar"></div>
+
 

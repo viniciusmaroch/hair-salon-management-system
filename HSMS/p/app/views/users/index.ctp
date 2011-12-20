@@ -1,3 +1,4 @@
+<?php echo $this->Session->flash();?>
 <div class="users index">
 <?php     echo $html->css('cake.generic.css');?>
 	<h2><?php __('Users');?></h2>
@@ -5,8 +6,9 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('UID');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
-			<th><?php echo $this->Paginator->sort('password');?></th>
+			
 			<th><?php echo $this->Paginator->sort('last_login');?></th>
+			<th><?php echo $this->Paginator->sort('is_customer');?></th>
 			<th><?php echo $this->Paginator->sort('is_employee');?></th>
 			<th><?php echo $this->Paginator->sort('is_manager');?></th>
 			<th><?php echo $this->Paginator->sort('firstName');?></th>
@@ -31,8 +33,9 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $user['User']['UID']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['name']; ?>&nbsp;</td>
-		<td><?php echo $user['User']['password']; ?>&nbsp;</td>
+		
 		<td><?php echo $user['User']['last_login']; ?>&nbsp;</td>
+		<td><?php echo $user['User']['is_customer']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_employee']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['is_manager']; ?>&nbsp;</td>
 		<td><?php echo $user['User']['firstName']; ?>&nbsp;</td>
@@ -69,9 +72,9 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New User', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Appointments', true), array('controller' => 'appointments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Appointment', true), array('controller' => 'appointments', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Appointments', true), array('controller' => 'appointments', 'action' => 'viewAll')); ?> </li>
+		<li><?php echo $this->Html->link(__('View Calendar', true), array('controller' => 'appointments', 'action' => 'index')); ?> </li>		
 		<li><?php echo $this->Html->link(__('List News', true), array('controller' => 'news', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New News', true), array('controller' => 'news', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Shifts', true), array('controller' => 'shifts', 'action' => 'index')); ?> </li>

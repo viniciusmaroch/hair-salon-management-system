@@ -7,7 +7,10 @@ class ServicesController extends AppController {
 		$this->Service->recursive = 0;
 		$this->set('services', $this->paginate());
 	}
-
+	function viewPublic() {
+		$this->Service->recursive = 0;
+		$this->set('services', $this->paginate());
+	}
 	function view($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid service', true));

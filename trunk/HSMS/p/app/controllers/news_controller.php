@@ -56,6 +56,8 @@ class NewsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->News->read(null, $id);
 		}
+		$users = $this->News->User->find('list', array('conditions' => array('User.is_manager' => 1 )));
+		$this->set(compact('users'));
 	}
 
 	function delete($id = null) {
